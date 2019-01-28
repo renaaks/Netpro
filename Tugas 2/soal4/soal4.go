@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-const myIPAddress = "0.0.0.0"
+const myIPAddress = "192.182.0.3"
 const ipv4HeaderSize = 20
 
 func main() {
@@ -76,7 +76,7 @@ func checkSum(msg []byte) uint16 {
 		sum += int(msg[n])*256 + int(msg[n+1])
 	}
 	sum = (sum >> 16) + (sum & 0xffff)
-	sum += (sum << 16)
+	sum += (sum >> 16)
 	var answer uint16 = uint16(^sum)
 	return answer
 }
