@@ -15,8 +15,8 @@ func check(err error, message string) {
 }
 
 func main() {
-	ln, err := net.Listen("tcp", ":8080")
-	check(err, "Servey is ready,")
+	ln, err := net.Listen("tcp", ":5643")
+	check(err, "Server is ready,")
 
 	for {
 		conn, err := ln.Accept()

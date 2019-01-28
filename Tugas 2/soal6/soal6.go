@@ -34,7 +34,7 @@ func main() {
 	clientJobs := make(chan ClientJob)
 	go generateResponses(clientJobs)
 
-	ln, err := net.Listen("tcp", ":8080")
+	ln, err := net.Listen("tcp", ":5643")
 	check(err, "Server is ready.")
 
 	for {
